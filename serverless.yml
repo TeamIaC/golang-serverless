@@ -15,9 +15,12 @@ functions:
   # 関数名
   sample:
     handler: bin/main
-    # API Gateway
     events:
+      # EventBridge
+      - schedule: cron(0 1 * * ? *)
+      # API Gateway
       - http:
           path: /message
           method: get
           integration: lambda
+      

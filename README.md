@@ -5,13 +5,13 @@
 1. Create a new service based on this template
 
 ```
-sls create -u https://github.com/serverless/serverless-golang/ -p myservice
+sls create -u https://github.com/serverless/serverless-golang/ -p project-name
 ```
 
 2. Compile function
 
 ```
-cd myservice
+cd project-name
 GOOS=linux go build -o bin/main
 ```
 
