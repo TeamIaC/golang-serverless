@@ -1,0 +1,23 @@
+service: golang-serverless
+
+provider:
+  name: aws
+  region: ap-northeast-1
+  runtime: go1.x
+  
+package:
+  exclude:
+    - ./**
+  include:
+    - ./bin/**
+
+functions:
+  # 関数名
+  sample:
+    handler: bin/main
+    # API Gateway
+    events:
+      - http:
+          path: /message
+          method: get
+          integration: lambda
